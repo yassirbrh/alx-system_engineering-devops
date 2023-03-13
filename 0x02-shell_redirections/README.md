@@ -14,3 +14,4 @@ SCRIPTS :
 	10-no_more_js : script that deletes all the .js files in the current directory and all its subfolders
 	12-newest_files : script that displays the 10 newest files in the current directory
 	13-unique : script that takes a list of words as input and prints only words that appear exactly once
+	14-findthatword : script to display lines containing the pattern root from the file /etc/passwd
