@@ -11,3 +11,4 @@ SCRIPTS :
 	6-third_line : script to display the third line of the file iacta.
 	8-cwd_state : script that writes into the file ls_cwd_content the result of ls -la
 	9-duplicate_last_line : script that duplicates the last line of the file iacta
+	10-no_more_js : script that deletes all the .js files in the current directory and all its subfolders
