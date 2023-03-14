@@ -9,6 +9,7 @@ SCRIPTS :
 	4-lastlines : script to display the last 10 lines of /etc/passwd.
 	5-firstlines : script to display the first 10 lines of /etc/passwd.
 	6-third_line : script to display the third line of the file iacta.
+	7-file : you can see it as a normal script but no it's a pain, i got no description !! SORRY
 	8-cwd_state : script that writes into the file ls_cwd_content the result of ls -la
 	9-duplicate_last_line : script that duplicates the last line of the file iacta
 	10-no_more_js : script that deletes all the .js files in the current directory and all its subfolders
