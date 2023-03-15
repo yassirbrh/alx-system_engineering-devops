@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -d ' ' -f1 | uniq -c | sort -r | rev | cut -d ' ' -f1 | rev | tr -d "host" | head -n 11
+cut -d ' ' -f1 | uniq -c | sort -r | rev | cut -d ' ' -f1 | rev | perl -ne "print unless /host/" | head -n 11
