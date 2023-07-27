@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Bash script to display "Better School" 10 times and "Hi" at the 9th iter
 i=0;
-for ((i=0; i < 10; i++))
+while [ $i -lt 10 ]
 do
 	echo "Best School";
 	if [ "$i" -eq 8 ]
 	then
 		echo "Hi";
 	fi
+	((i++));
 done
