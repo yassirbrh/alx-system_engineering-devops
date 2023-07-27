@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Script displays the content of the directory without the starting dash
+for name in *
+do
+	filename=$(echo "$name" | cut -d '-' -f2);
+	echo "$filename";
+done
