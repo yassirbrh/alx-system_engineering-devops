@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Bash script that writes "I am alive" indefinitely to the file /tmp/my_process.
+iter=1;
+while [ $iter -eq 1 ]
+do
+  echo "I am alive!" >> /tmp/my_process
+  sleep 2
+done
