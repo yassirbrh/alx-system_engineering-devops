@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Bash script to install nginx web server
+apt-get -y update && apt-get install -y nginx
+mkdir -p /var/www/helloworld
+echo "Hello World!" > /var/www/helloworld/index.html
+echo "http {
+        root /var/www/helloworld;
+        index index.html;
+        server {
+                listen 80;
+                location \ {
+                }
+        }
+}
+events {
+}" > /etc/nginx/nginx.conf
+service nginx start
