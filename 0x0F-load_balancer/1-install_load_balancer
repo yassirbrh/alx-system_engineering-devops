@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Bash script that install and configure HAproxy on lb-01 server
-apt-get install haproxy -y
+apt-get -y update && apt-get install haproxy -y
 echo -e "# /etc/haproxy/haproxy.cfg
 
 # Global settings
