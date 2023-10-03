@@ -5,7 +5,7 @@ exec { 'install_nginx':
     command  => 'apt-get -y update && apt-get install -y nginx;
     mkdir -p /var/www/helloworld;
     echo "Hello World!" > /var/www/helloworld/index.html;
-    echo -e "http {
+    echo "http {
         root /var/www/helloworld;
         index index.html;
         server {
