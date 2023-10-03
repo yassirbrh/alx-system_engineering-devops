@@ -2,9 +2,9 @@
 
 exec { 'install_nginx':
     provider => shell,
-    command  => 'apt-get -y update && apt-get install -y nginx
-    mkdir -p /var/www/helloworld
-    echo "Hello World!" > /var/www/helloworld/index.html
+    command  => 'apt-get -y update && apt-get install -y nginx;
+    mkdir -p /var/www/helloworld;
+    echo "Hello World!" > /var/www/helloworld/index.html;
     echo -e "http {
         root /var/www/helloworld;
         index index.html;
@@ -22,7 +22,7 @@ exec { 'install_nginx':
                         return 404 \"Ceci n\'est pas une page\n\n\";
                 }
         }
-}
-events {
-}" > /etc/nginx/nginx.conf;service nginx start;'
+    }
+    events {
+    }" > /etc/nginx/nginx.conf;service nginx start;'
 }
