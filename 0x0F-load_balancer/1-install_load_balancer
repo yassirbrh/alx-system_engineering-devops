@@ -6,4 +6,4 @@ add-apt-repository -y ppa:vbernat/haproxy-2.5
 apt-get -y update && apt-get install haproxy -y
 sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 sed -i "$ a\listen 388479-lb-01\n\tbind *:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 388479-web-01 54.160.103.40:80 check\n\tserver 388479-web-02 52.91.148.127:80 check" /etc/haproxy/haproxy.cfg
-service haproxy restart
+service haproxy start
