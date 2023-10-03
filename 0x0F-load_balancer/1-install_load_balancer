@@ -6,6 +6,7 @@ add-apt-repository -y ppa:vbernat/haproxy-2.5
 apt-get -y update && apt-get install haproxy -y
 sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 echo -e "frontend http-in
+    listen 388479-lb-01
     bind *:80
     mode http
     default_backend webservers
