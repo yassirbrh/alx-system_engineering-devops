@@ -13,5 +13,5 @@ echo -e "listen 388479-lb-01
     option forwardfor
     server 388479-web-01 54.160.103.40:80 check
     server 388479-web-02 52.91.148.127:80 check
-" > /etc/haproxy/haproxy.cfg
+" >> /etc/haproxy/haproxy.cfg
 service haproxy restart
