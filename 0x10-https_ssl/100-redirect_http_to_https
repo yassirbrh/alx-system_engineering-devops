@@ -1,0 +1,31 @@
+# /etc/haproxy/haproxy.cfg
+
+# Global settings
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    maxconn 4096
+    user haproxy
+    group haproxy
+    ssl-dh-param-file /etc/haproxy/dhparams.pem
+
+defaults
+    log global
+    mode http
+    option httplog
+    option dontlognull
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+
+frontend http-in
+    bind *:80
+    bind *:443 ssl crt /etc/haproxy/certs/www.yasscodes.tech.pem
+    redirect scheme https code 301 if !{ ssl_fc }
+    default_backend servers
+
+backend servers
+    balance roundrobin
+
+    server web-01 54.160.103.40:80 check
+    server web-02 52.91.148.127:80 check
