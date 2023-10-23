@@ -21,9 +21,9 @@ if __name__ == '__main__':
             'https://jsonplaceholder.typicode.com/todos', params=for_todos)
         file = str(id) + ".csv"
         with open(file, "w", newline="") as f:
-            writer = csv.writer(f)
+            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for todo in todos.json():
                 username = users.json()['username']
-                completed = todo.get('completed')
+                completed = str(todo.get('completed'))
                 title = todo.get('title')
-                writer.writerow([id, username, completed, title]) 
+                writer.writerow([id, username, completed, title])
