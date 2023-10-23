@@ -4,16 +4,17 @@
     returns information about his/her TODO list progress.
 '''
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == '__main__':
-    if len(argv) > 1:
+    if len(sys.argv) > 1:
+        id = int(sys.argv[1])
         users = requests.get(
-            'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1]))
+            'https://jsonplaceholder.typicode.com/users/{}'.format(id))
         name = users.json()['name']
         for_todos = {
-            'userId': argv[1]
+            'userId': id
         }
         todos = requests.get(
             'https://jsonplaceholder.typicode.com/todos', params=for_todos)
