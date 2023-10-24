@@ -13,7 +13,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         id = int(sys.argv[1])
         users = requests.get(
-            'https://jsonplaceholder.typicode.com/users/{}'.format(id))
+            'https://jsonplaceholder.typicode.com/users/{}'.format(id)).json()
         for_todos = {
             'userId': id
         }
@@ -24,11 +24,11 @@ if __name__ == '__main__':
             output_arr = []
             for todo in todos.json():
                 data = {}
-                username = users.json()['username']
+                username = users['username']
                 title = todo.get('title')
                 completed = todo.get('completed')
                 data['task'] = title
                 data['completed'] = completed
                 data['username'] = username
-                output_arr.append(dict(data))
-            json.dump({str(id): output_arr}, f)
+                output_arr.append(data)
+            json.dump({sys.argv[1]: output_arr}, f)
