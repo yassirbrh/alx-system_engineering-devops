@@ -2,7 +2,7 @@
 
 exec {'Increase Limits':
 	provider => shell,
-	command  => 'sudo sed -i "s/\"-n 15\"/\"-n 4096\"/" /etc/default/nginx'
+	command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/" /etc/default/nginx'
 }
 
 exec {'restart':
