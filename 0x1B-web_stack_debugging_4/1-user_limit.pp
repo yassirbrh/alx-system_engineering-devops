@@ -2,7 +2,7 @@
 
 exec {'change-os-configuration-for-holberton-user':
     provider => shell,
-    command  => 'sudo sed -i "s/nofile 5/nofile 5000/" /etc/security/limits.conf'
+    command  => 'sudo sed -i "s/nofile 5/nofile 5000/" /etc/security/limits.conf',
     before   => Exec['change-os-configuration-for-holberton-user-2']
 }
 
